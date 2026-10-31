@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+        }
+
+        .card {
+            width: 200px;
+            height: 200px;
+            box-shadow: 0px 0px 2px gray;
+            background-color: teal;
+            position: absolute;
+            animation: move 4s infinite ;
+
+        }
+
+        @keyframes move {
+            from {
+                left: -100%;
+                background-color: yellow;
+                transform: scale(2);
+            }
+
+            to {
+                left: 1000px;
+                background-color: red;
+                transform: scale(0.1);
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+
+    </div>
+
+</body>
+
+</html>

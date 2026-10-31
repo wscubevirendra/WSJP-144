@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .card {
+            width: 300px;
+            height: 300px;
+            margin: 50px auto;
+            box-shadow: 0px 0px 2px gray;
+            overflow: hidden;
+            transition: 1s;
+
+        }
+
+        .overlay {
+            width: 100%;
+            box-shadow: 0px 0px 2px gray;
+            /* background-color: rgba(0, 0, 0, 0.6); */
+            transform: translateY(0px);
+            color: white;
+            transition: 1s;
+        }
+
+        .card:hover {
+            transform:skew(20deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <img src="https://image.tmdb.org/t/p/w1280/bjiS5ipwxb9JFy3XRRN4OAilSeX.jpg" width="100%" height="100%" alt="">
+        <div class="overlay">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus, rem rerum! Porro qui non aut excepturi
+            temporibus, omnis voluptas quo distinctio veritatis quam dolorem facilis vitae maiores voluptatibus nam
+            assumenda!
+
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

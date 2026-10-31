@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .parent {
+            width: 900px;
+            height: 300px;
+            border: 2px solid black;
+            margin: 20px auto;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 20px;
+        }
+
+        .card {
+            width: 200px;
+            height: 100px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .circle {
+            width: 50px;
+            height: 50px;
+            border: 2px solid green;
+            border-radius: 50%;
+        }
+
+        .circle:hover {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="card">
+            <div class="circle"></div>
+        </div>
+        <div class="card">
+            <div class="circle"></div>
+        </div>
+        <div class="card">
+            <div class="circle"></div>
+        </div>
+        <div class="card">
+            <div class="circle"></div>
+        </div>
+        <div class="card">
+            <div class="circle"></div>
+        </div>
+        <div class="card">
+            <div class="circle"></div>
+        </div>
+        <div class="card">
+            <div class="circle"></div>
+        </div>
+        <div class="card">
+            <div class="circle"></div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

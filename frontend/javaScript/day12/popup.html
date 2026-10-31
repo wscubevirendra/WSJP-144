@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popUpContainer {
+            width: 300px;
+            height: 200px;
+            padding: 20px;
+            box-shadow: 0px 1px 1px gray;
+            position: fixed;
+            top: 20px;
+            background-color: yellow;
+            display: none;
+        }
+
+        .open {
+            display: block !important;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="popUp()">Click</button>
+    <dic class="popUpContainer">
+        <button onclick="popUpClose()">Close</button>
+    </dic>
+
+    <script>
+        // const popUpContainer = document.querySelector(".popUpContainer");
+        // function popUp() {
+        //     // popUpContainer.classList.add("open")
+        //     popUpContainer.style.display="block"
+        // }
+
+        //    function popUpClose() {
+        //     // popUpContainer.classList.remove("open")
+        //     popUpContainer.style.display="none"
+
+        // }
+
+        function randomColor() {
+            const r = parseInt(Math.random() * 256)
+            const g = parseInt(Math.random() * 256)
+            const b = parseInt(Math.random() * 256)
+            element.style.background=`rgb(${r},${g},${b})`
+            element.innerText=`rgb(${r},${g},${b})`
+        }
+    </script>
+</body>
+
+</html>

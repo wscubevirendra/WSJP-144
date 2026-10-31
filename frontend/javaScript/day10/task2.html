@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            width: 200px;
+            padding: 10px;
+            height: 100px;
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <button onclick="incHanlder()">+</button>
+        <h2>0</h2>
+        <button  onclick="incHanlder()">-</button>
+
+    </div>
+
+    <script>
+        let count = 0;
+        const h2 = document.querySelector("h2");
+        function incHanlder() {
+            count++
+            h2.innerText = count
+
+        }
+
+    
+
+
+
+    </script>
+</body>
+
+</html>

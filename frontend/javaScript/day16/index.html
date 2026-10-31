@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f1f5f9;
+            height: 100vh;
+        }
+
+        .accordion {
+            max-width: 650px;
+            margin: 40px auto;
+            /* border: 2px solid red; */
+            padding: 10px;
+        }
+
+        .accordion-item {
+            background-color: white;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .accordion-title {
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+            padding: 20px;
+        }
+
+        .accordion-title span {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .content {
+            color: gray;
+            padding: 0px 20px 20px;
+            text-align: justify;
+            display: none;
+        }
+
+        .active {
+            display: block !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="accordion">
+        <div class="accordion-item">
+            <div class="accordion-title">
+                <h3>Can I track the location of my booked bus online?</h3>
+                <span>+</span>
+            </div>
+            <div class="content active">
+                Yes, you can track your bus online by using our bus tracking app feature called “Track My Bus”. This
+                feature allows passengers and their families to track the live bus location. You may follow your bus on
+                a map and use the information to plan your trip to the boarding point and to get off at the correct
+                stop. Family and friends may also check the bus position to schedule pick-ups and ensure safety.
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-title">
+                <h3>What are the advantages of bus ticket booking with redBus?</h3>
+                <span>+</span>
+            </div>
+            <div class="content">
+                There are many advantages of booking bus tickets online with redBus. redBus is India’s leading bus
+                ticket booking platform, where you can book private or government-owned buses. redBus allows you to find
+                the different types of buses, choose the preferred bus seats, and find your nearest boarding and
+                dropping points. You can also filter the buses based on timings, like morning, evening, etc.
+
+
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-title">
+                <h3>Why book bus tickets online on redBus?</h3>
+                <span>+</span>
+            </div>
+            <div class="content">
+                Booking bus tickets online on redBus is increasingly becoming the preferred choice for travellers due to
+                its numerous advantages over traditional methods. With redBus, customers can book their bus tickets
+                effortlessly from the comfort of their homes, avoiding the inconvenience of standing in long lines at
+                bus stations or travel agencies. Online bus booking offers the luxury of comparing different bus
+                schedules and operators and presents various discount offers and exclusive deals, resulting in
+                significant savings. Payment security is another notable feature of online booking, which ensures that
+                your financial information is well-protected against fraud. Additionally, customers can pick their
+                seats, providing a customized travel experience. Online bus booking platforms give real-time updates
+                about any changes in the bus timetable, including delays or cancellations, enabling better planning. The
+                convenience doesn't stop here; travellers can even compare onboard amenities like charging points or
+                snacks, further enhancing the travel experience.
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+        const titles = document.querySelectorAll(".accordion-title");
+
+        titles.forEach((title, index) => {
+            title.addEventListener("click", () => {
+                //    const parent=title.parentElement;
+                const content = title.nextElementSibling;
+                content.classList.toggle("active")
+                const icon= title.children[1];
+
+                if (content.classList.contains("active")) {
+                    icon.innerText="-";
+                } else {
+                    icon.innerText="+";
+                }
+            })
+        })
+
+
+    </script>
+
+</body>
+
+</html>

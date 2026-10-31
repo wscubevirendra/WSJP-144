@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+        integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            width: 100%;
+            color: white;
+            background-color: teal;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            font-size: 25px;
+        }
+
+        body {
+            height: 100vh;
+        }
+
+        header button {
+            padding: 4px 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .navbar {
+            width: 300px;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            height: 100vh;
+            top: 0px;
+            left: -100%;
+            transition: 300ms;
+        }
+
+        .open {
+            left: 0 !important;
+
+        }
+
+        #cross {
+            display: none;
+        }
+
+       
+    </style>
+</head>
+
+<body>
+    <header>
+        <h3>Navbar</h3>
+        <button id="bar" onclick="toggleHandler()"><i class="fa-solid fa-bars-staggered"></i></button>
+        <button id="cross" onclick="toggleHandler()"><i class="fa-solid fa-x"></i></button>
+
+        <div class="navbar">
+
+        </div>
+    </header>
+
+    <script>
+
+        const bar = document.querySelector("#bar");
+        const cross = document.querySelector("#cross");
+        const navbar = document.querySelector(".navbar");
+
+        function toggleHandler() {
+            navbar.classList.toggle("open");
+
+            if (navbar.classList.contains("open")) {
+                bar.style.display = "none";
+                cross.style.display = "block";
+            } else {
+                bar.style.display = "block";
+                cross.style.display = "none";
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

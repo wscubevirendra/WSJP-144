@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .card {
+            padding: 20px;
+        }
+
+        .card:nth-child(even) {
+            background-color: teal;
+        }
+
+        .card:nth-child(odd) {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container"></div>
+
+    <script>
+        const container = document.querySelector(".container")
+        function demo() {
+            for (let i = 1; i <= 5; i++) {
+                const div = document.createElement("div")
+                div.classList.add("card")
+                container.append(div)
+            }
+        }
+
+        demo()
+    </script>
+
+</body>
+
+</html>

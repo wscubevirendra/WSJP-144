@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 1000px;
+            margin: 20px auto;
+            display: flex;
+            gap: 20px;
+        }
+
+        .card {
+            width: 200px;
+            height: 200px;
+            border: 2px solid red;
+            transition: 1s;
+        }
+
+        .active {
+            background-color: green;
+            transform: scale(0.5);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div onclick="demo(this)" class="card">1</div>
+        <div onclick="demo(this)" class="card">2</div>
+        <div onclick="demo(this)" class="card">3</div>
+        <div onclick="demo(this)" class="card">4</div>
+        <div onclick="demo(this)" class="card">5</div>
+    </div>
+
+
+    <script>
+        // const cards = document.querySelectorAll(".card");
+
+        function demo(element) {
+            element.classList.toggle("active")
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 800px;
+            height: 350px;
+            background: linear-gradient(135deg, #eef2ff, #f5f3ff);
+            border-radius: 20px;
+            display: flex;
+            overflow: hidden;
+
+
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border: 2px solid black;
+            flex-shrink: 0;
+            transform: translateX(0);
+            transition: 400ms;
+        }
+
+        .card div {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: blue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+
+        }
+
+        button {
+            background-color: blue;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div>M</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem ipsam illo assumenda placeat amet
+                reprehenderit, veritatis, quisquam mollitia rem beatae perspiciatis? Adipisci iste harum eaque, eos
+                porro aut ad? Animi.</p>
+            <h5>-Mahesh</h5>
+        </div>
+        <div class="card">
+            <div>M</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem ipsam illo assumenda placeat amet
+                reprehenderit, veritatis, quisquam mollitia rem beatae perspiciatis? Adipisci iste harum eaque, eos
+                porro aut ad? Animi.</p>
+            <h5>-Rohit</h5>
+        </div>
+        <div class="card">
+            <div>M</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem ipsam illo assumenda placeat amet
+                reprehenderit, veritatis, quisquam mollitia rem beatae perspiciatis? Adipisci iste harum eaque, eos
+                porro aut ad? Animi.</p>
+            <h5>-Ganesh</h5>
+        </div>
+        <div class="card">
+            <div>M</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem ipsam illo assumenda placeat amet
+                reprehenderit, veritatis, quisquam mollitia rem beatae perspiciatis? Adipisci iste harum eaque, eos
+                porro aut ad? Animi.</p>
+            <h5>-Mahesh</h5>
+        </div>
+        <div class="card">
+            <div>M</div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem ipsam illo assumenda placeat amet
+                reprehenderit, veritatis, quisquam mollitia rem beatae perspiciatis? Adipisci iste harum eaque, eos
+                porro aut ad? Animi.</p>
+            <h5>-Mahesh</h5>
+        </div>
+
+
+
+    </div>
+
+    <div>
+        <button>
+            ></button>
+        <button>></button>
+    </div>
+
+    <script>
+        
+        const button = document.querySelectorAll("button");
+        const cards = document.querySelectorAll(".card");
+        let count = 0;
+
+        button[1].addEventListener("click", () => {
+            count++
+            for (let card of cards) {
+                card.style.transform = `translateX(-${count * 100}%)`
+
+            }
+        })
+    </script>
+
+</body>
+
+</html>

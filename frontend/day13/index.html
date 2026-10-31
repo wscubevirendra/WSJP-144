@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            padding: 20px;
+            background-color: #002ccd;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            overflow-x: hidden;
+        }
+
+        .card {
+            width: 275px;
+            background-color: white;
+            box-sizing: 0px 0px 2px white;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+
+
+        }
+
+        .card:nth-child(3) {
+            order: 1;
+        }
+
+         .card:nth-child(4) {
+            order: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            1
+
+        </div>
+        <div class="card">
+            2
+
+        </div>
+        <div class="card">
+            3
+
+        </div>
+        <div class="card">
+            4
+
+        </div>
+        <div class="card">
+            5
+
+        </div>
+        <div class="card">
+            6
+
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

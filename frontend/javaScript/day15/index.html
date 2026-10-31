@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+        integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 700px;
+            min-height: 400px;
+            margin: 50px auto;
+            padding: 16px;
+            /* border: 1px solid black; */
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 10px;
+        }
+
+        .input_container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .input_container input {
+            flex-grow: 1;
+            padding: 4px;
+        }
+
+        .input_container button {
+            padding: 2px 20px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px 0px;
+
+            list-style: none;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        ul li {
+            padding: 6px 10px;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        ul li i:hover {
+            color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="input_container">
+            <input placeholder="Add toDo ......." type="text">
+            <button>Add</button>
+        </div>
+        <ul>
+
+        </ul>
+
+    </div>
+
+    <script>
+        const input = document.querySelector(".container input");
+        const button = document.querySelector(".container button");
+        const ul = document.querySelector(".container ul");
+
+        input.addEventListener("keyup", (event) => {
+            if (event.key == "Enter") {
+                addToDo()
+            }
+        })
+
+        button.addEventListener("click", (event) => {
+            addToDo()
+        })
+
+
+
+        function addToDo() {
+            const value = input.value.trim();
+            if (value == "") {
+                return alert("Invalid input")
+            }
+            const list = document.createElement("li")
+            list.innerHTML = `${value} <i class="fa-solid fa-trash"></i>`
+
+            list.querySelector("i").addEventListener("click", () => {
+                list.remove();
+            })
+            input.value = ""
+
+            ul.prepend(list)
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    width: 100%;
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.header-container {
+    width: 1170px;
+    padding: 16px;
+    margin: auto;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-container>div {
+    display: flex;
+    gap: 20px;
+}
+
+.chatBtn {
+    height: 44px;
+    border-radius: 8px;
+    padding: 10px 18px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border: none;
+    color: #27AE60;
+
+}
+
+.callBtn {
+    border-radius: 8px;
+    border: none;
+    color: #FFFFFF;
+    height: 44px;
+    padding: 10px 18px;
+    background: linear-gradient(to left, #0ACEFE, #2699FB);
+}
+
+.hero_section {
+    width: 1170px;
+    border: 2px solid red;
+    display: grid;
+    margin: auto;
+    grid-template-columns: repeat(2, 49%);
+}
+
+.hero_section h1 {
+    font-size: 52px;
+}
+
+.hero_section h1 span{
+    color: #2699FB;
+    background-image: url('../images/Vector\ 63\ \(7\).png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+}

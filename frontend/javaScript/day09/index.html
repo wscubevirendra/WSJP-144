@@ -1,0 +1,182 @@
+<script>
+    const users = [
+        {
+            name: "Rahul Sharma",
+            city: "Jaipur",
+            age: 25,
+            gender: "Male",
+            email: "rahul@example.com",
+        },
+        {
+            name: "Priya Verma",
+            city: "Delhi",
+            age: 23,
+            gender: "Female",
+            email: "priya@example.com",
+        },
+        {
+            name: "Amit Kumar",
+            city: "Mumbai",
+            age: 28,
+            gender: "Male",
+            email: "amit@example.com",
+        },
+        {
+            name: "Sneha Singh",
+            city: "Lucknow",
+            age: 24,
+            gender: "Female",
+            email: "sneha@example.com",
+        },
+        {
+            name: "Vikash Gupta",
+            city: "Patna",
+            age: 30,
+            gender: "Male",
+            email: "vikash@example.com",
+        },
+        {
+            name: "Anjali Mehta",
+            city: "Ahmedabad",
+            age: 26,
+            gender: "Female",
+            email: "anjali@example.com",
+        },
+        {
+            name: "Rohit Yadav",
+            city: "Gurugram",
+            age: 27,
+            gender: "Male",
+            email: "rohit@example.com",
+        },
+        {
+            name: "Neha Patel",
+            city: "Surat",
+            age: 22,
+            gender: "Female",
+            email: "neha@example.com",
+        },
+        {
+            name: "Karan Malhotra",
+            city: "Chandigarh",
+            age: 29,
+            gender: "Male",
+            email: "karan@example.com",
+        },
+        {
+            name: "Pooja Mishra",
+            city: "Bhopal",
+            age: 21,
+            gender: "Female",
+            email: "pooja@example.com",
+        },
+    ];
+
+    const newarray = [
+        {
+            name: "Mena Mishra",
+            city: "Bhopal",
+            age: 21,
+            gender: "Female",
+            email: "pooja@example.com",
+        },
+        {
+            name: "Mena Mishra",
+            city: "Bhopal",
+            age: 27,
+            gender: "Female",
+            email: "pooja@example.com",
+        },
+
+    ]
+
+    // function printStudents(users) {
+    //     for (const user of users) {
+    //         if (user.age >= 25) {
+    //             console.log(`Student name is ${user.name} and age is ${user.age} `)
+    //         }
+    //     }
+    // }
+
+    // printStudents(newarray)
+
+    const cart = [
+        {
+            productName: "Laptop",
+            price: 55000,
+            qty: 1
+        },
+        {
+            productName: "Smartphone",
+            price: 25000,
+            qty: 1
+        },
+        {
+            productName: "Headphones",
+            price: 2000,
+            qty: 4
+        },
+        {
+            productName: "Keyboard",
+            price: 1500,
+            qty: 3
+        },
+        {
+            productName: "Mouse",
+            price: 800,
+            qty: 2
+        }
+    ];
+
+
+    // let total = 0;
+    // for (const product of cart) {
+    //     total += (product.price * product.qty)
+    //     //total=total+price
+
+    // }
+    // console.log(`cart total:-${total}`)
+
+    let books = [
+        { title: "JS Basics", author: "John", available: true },
+        { title: "React Guide", author: "Jane", available: false },
+        { title: "Node Mastery", author: "Virendra", available: true },
+        { title: "HTML Mastery", author: "Devendra", available: false },
+        { title: "AI Mastery", author: "John", available: false }
+    ];
+
+    // const availableBooks = [];
+    // for (const book of books) {
+    //     if (book.available == true) {
+    //       availableBooks.push(book.title)
+    //     }
+    // }
+
+    // console.log(availableBooks)
+
+    let products = [
+        { id: 1, name: "Laptop", price: 50000 },
+        { id: 2, name: "Phone", price: 20000 },
+        { id: 3, name: "Mouse", price: 500 }
+    ];
+
+    let lowest_product = products[0]
+    for (const prod of products) {
+        if (lowest_product.price > prod.price) {
+            //50000>50000-false
+            //50000>20000-false
+            //20000>500-true
+            
+            lowest_product = prod
+        }
+    }
+
+    console.log(lowest_product)
+
+
+
+    //create array ob object name email gender percentage  1)Avarage  2) Male Student Avarge 3) Female Student Avarage
+
+
+
+</script>

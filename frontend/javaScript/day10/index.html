@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .heading {
+            background-color: red;
+            padding: 10px;
+        }
+
+        .done{
+            background-color: yellow;
+            color: white;
+            font-size: 50px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 onclick="demo()" id="heading">Text Change</h1>
+
+    <script>
+
+
+        function demo() {
+            const heading = document.querySelector("#heading");
+            heading.innerHTML = "<span>Text Change Successfully</span>";
+            heading.classList.toggle("done")
+        }
+
+    </script>
+</body>
+
+</html>

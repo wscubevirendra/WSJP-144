@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+        integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        #slider {
+            width: 1000px;
+            padding: 20px;
+            border: 2px solid red;
+            margin: auto;
+        }
+
+        .top-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        button {
+            padding: 10px;
+            border-radius: 50%;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            margin-left: 50px;
+        }
+
+        button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .container-cards {
+            display: flex;
+            gap: 10px;
+            overflow: hidden;
+        }
+
+        .card {
+            width: 200px;
+            flex-shrink: 0;
+            transform: translateX(0);
+            transition: 400ms;
+        }
+
+        .card img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="slider">
+        <div class="top-section">
+            <h2>Shop groceries on Instamart</h2>
+            <div>
+                <button onclick="prevSlide()"><i class="fa-solid fa-arrow-left"></i></button>
+                <button onclick="nextSlide()"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+        <div class="container-cards">
+            <div class="card">
+                <img src="images/imgi_11_Cake.png" alt="">
+            </div>
+            <div class="card">
+                <img src="images/imgi_12_Biryani.png" alt="">
+            </div>
+            <div class="card">
+                <img src="images/imgi_13_Rolls.png" alt="">
+            </div>
+            <div class="card">
+                <img src="images/imgi_14_South Indian.png" alt="">
+            </div>
+            <div class="card">
+                <img src="images/imgi_16_Paratha.png" alt="">
+            </div>
+            <div class="card">
+                <img src="images/imgi_17_Lassi.png" alt="">
+            </div>
+            <div class="card">
+                <img src="images/imgi_19_Tea.png" alt="">
+            </div>
+            <div class="card">
+                <img src="images/imgi_20_Khichdi.png" alt="">
+            </div>
+            <div class="card">
+                <img src="images/imgi_20_Khichdi.png" alt="">
+            </div>
+            <div class="card">
+                <img src="images/imgi_26_Dosa.png" alt="">
+            </div>
+            <div class="card">
+                <img src="images/imgi_8_Burger.png" alt="">
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+    <script>
+        const cards = document.querySelectorAll(".card");
+        let count = 0
+
+        function nextSlide() {
+            count++
+
+            if (cards.length - 4 < count) {
+                count=0
+            }
+            console.log(count, cards.length - 1)
+            for (const card of cards) {
+                card.style.transform = `translateX(-${count * 200}%)`
+            }
+        }
+
+        function prevSlide() {
+            if (count == 0) 
+            count--
+            for (const card of cards) {
+                card.style.transform = `translateX(-${count * 200}%)`
+            }
+        }
+    </script>
+</body>
+
+</html>
