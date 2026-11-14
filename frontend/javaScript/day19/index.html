@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        body {
+            background-color: black;
+            height: 100vh;
+
+
+        }
+
+        main {
+            padding: 20px;
+
+        }
+
+        main>div {
+            text-align: center;
+            margin: 10px;
+        }
+
+        input {
+            width: 700px;
+            padding: 10px;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #movies_container {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            box-shadow: 0px 0px 1px gray;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            height: 350px;
+        }
+
+        .overview {
+            position: absolute;
+            background-color: white;
+            bottom: -100%;
+            padding: 10px;
+            text-align: justify;
+            transition: 300ms;
+
+        }
+
+        .overview>div {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 10px;
+        }
+
+        .card:hover .overview {
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div>
+            <input type="text">
+        </div>
+        <div id="movies_container">
+
+        </div>
+
+    </main>
+
+
+    <script>
+        const TOPMOVIESAPI = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1";
+        const input = document.querySelector("input");
+        const SEARCHAPI = "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
+        const movieContainer = document.querySelector("#movies_container")
+
+
+        async function getMovies(API) {
+            try {
+                const response = await fetch(API);
+                const data = await response.json();
+                showMovies(data.results)
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        getMovies(TOPMOVIESAPI)
+
+
+        function showMovies(movies) {
+            movieContainer.innerHTML = ""
+
+            for (const movie of movies) {
+                const box = document.createElement("div");
+                box.classList.add("card");
+
+                box.innerHTML = `<img src=https://image.tmdb.org/t/p/w1280${movie.poster_path} alt="">
+                <div class="overview">
+                    <div>
+                        <h3>${movie.title}</h3>
+                        <span>${movie.vote_average}/10 </span>
+                    </div>
+                    <p>
+                        <b>Overview:</b>
+                        ${movie.overview}
+                    </p>
+                </div>`
+                movieContainer.append(box)
+            }
+
+        }
+
+
+
+        input.addEventListener("keyup", (event) => {
+            if (input.value.trim() === "") {
+                getMovies(TOPMOVIESAPI)
+            } else {
+                getMovies(SEARCHAPI + input.value)
+
+            }
+        })
+
+
+    </script>
+
+</body>
+
+</html>

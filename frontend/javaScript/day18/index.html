@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Card</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 40px;
+        }
+
+        #recipes {
+            max-width: 1250px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .recipe-card {
+            width: 300px;
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        .recipe-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .recipe-content {
+            padding: 18px;
+        }
+
+        .recipe-content h2 {
+            font-size: 21px;
+            color: #333;
+            margin-bottom: 12px;
+        }
+
+        .recipe-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #16a34a;
+        }
+
+        #loader {
+            width: 200px;
+            height: 200px;
+            border: 4px solid red;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            border-right: none;
+            border-radius: 50%;
+            animation: loading infinite linear 2s;
+            display: none;
+        }
+
+        @keyframes loading {
+            from {
+                transform: rotate(0);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .done {
+            display: block !important;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="recipes">
+
+    </section>
+    <div id="loader" ></div>
+
+    <script>
+        const recipes_container = document.querySelector("#recipes");
+        const loader = document.querySelector("#loader");
+
+
+        function loading(flag) {
+            if (flag) {
+                loader.classList.add("done");
+            } else {
+                loader.classList.remove("done");
+
+            }
+        }
+
+
+
+        async function getRecipes() {
+            try {
+                loading(true)
+                const price = parseInt(Math.random() * 500)
+                const response = await fetch("https://dummyjson.com/recipes");
+                const data = await response.json();
+                const recipes = data.recipes;
+                for (const recipe of recipes) {
+                    const box = document.createElement('div');
+                    box.classList.add("recipe-card");
+                    box.innerHTML = ` <img src=${recipe.image} alt="Vegetable Salad">
+            <div class="recipe-content">
+                <h2>${recipe.name}</h2>
+                <p class="recipe-price">₹</p>
+            </div>`
+                    recipes_container.append(box)
+                }
+
+            } catch (error) {
+                console.log(error)
+            }finally{
+                loading(false)
+            }
+        }
+
+        getRecipes()
+    </script>
+
+
+
+</body>
+
+</html>
